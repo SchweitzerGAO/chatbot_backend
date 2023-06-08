@@ -1,0 +1,63 @@
+version: "3.1"
+
+rules:
+
+- rule: greet
+  steps:
+  - intent: greet
+  - action: action_greet
+
+- rule: welcome
+  steps:
+  - intent: wake_up
+  - action: action_welcome
+
+- rule: goodbye
+  steps:
+  - intent: goodbye
+  - action: action_goodbye
+
+- rule: self introduction
+  steps:
+  - intent: self_introduction
+  - action: action_self_introduction
+
+- rule: ac on off
+  steps:
+  - intent: ac_on_off
+  - action: action_ac_on_off
+
+- rule: alter strength
+  steps:
+    - intent: alter_strength
+    - action: action_alter_strength
+
+- rule: call number
+  steps:
+    - intent: call_number
+    - action: action_call_number
+
+- rule: set temp
+  steps:
+    - intent: set_temp
+    - action: action_set_temp
+
+- rule: operate roof
+  steps:
+    - intent: operate_roof
+    - action: action_operate_roof
+
+- rule: operate windows
+  steps:
+    - intent: operate_window
+    - action: action_operate_window
+
+- rule: operate seat feature
+  steps:
+    - intent: operate_seat_feature
+    - action: action_operate_seat_feature
+
+- rule: operate mirror
+  steps:
+    - intent: operate_mirror
+    - action: action_operate_mirror

@@ -1,0 +1,163 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - deny
+  - self_introduction
+  - turn_on_off
+  - modify_attr
+  - operate_multimedia
+  - random_play
+  - wake_up
+  - ac_set_time
+  - info_hour
+  - info_minute
+
+entities:
+  - operation_onoff
+  - operation_attr
+  - operation_mm
+  - value
+  - device
+  - mode
+  - singer
+  - mm_name
+  - feature
+
+slots:
+  operation_onoff:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_onoff
+  operation_attr:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_attr
+  operation_mm:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_mm
+  temperature:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: value
+        role: temperature
+  episode:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: value
+        role: episode
+  device:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: device
+  mode:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: mode
+  singer:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: singer
+  mm_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: mm_name
+  feature:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: feature
+  hour:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: value
+        role: hour
+  minute:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: value
+        role: minute
+
+
+responses:
+  utter_greet:
+  - text: "你好，请问需要什么帮助？"
+  - text: "您好，请问需要什么帮助？"
+  - text: "我在"
+
+  utter_goodbye:
+  - text: "再见！"
+  - text: "祝您今天好心情，再见！"
+  - text: "拜拜！"
+  - text: "Bye!"
+
+  utter_self_introduction:
+  - text: "我是小软，您的智能助手"
+  - text: "我是小软，记住我的名字哦！"
+  - text: "我是小软"
+  - text: "你好！我是小软，您现在体验的是智能家居控制模式"
+
+  utter_ask_hour:
+  - text: "多长时间呢？"
+  - text: "空调需要定时多久呢？"
+  - text: "需要多久呢？"
+
+  utter_ask_minute:
+  - text: "多长时间呢？"
+  - text: "空调需要定时多久呢？"
+  - text: "需要多久呢？"
+
+  utter_response_deny:
+  - text: "好的，如果有需要的话，随时叫我哦"
+  - text: "好的，明白了，如果您有需要，小软随叫随到"
+
+  utter_default:
+  - text: "抱歉，我目前无法处理您的请求"
+  - text: "抱歉，我能力有限，目前无法处理您的请求"
+
+forms:
+  ac_set_time_form:
+    required_slots:
+        - hour
+        - minute
+
+actions:
+  - action_greet
+  - action_goodbye
+  - action_self_introduction
+  - action_default_fallback
+  - action_welcome
+  - action_turn_on_off
+  - action_modify_attr
+  - action_random_play
+  - action_operate_mm
+  - action_ac_set_time
+  - action_response_deny
+  - validate_ac_set_time_form
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

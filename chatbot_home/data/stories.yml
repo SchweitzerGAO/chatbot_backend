@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+
+- story: on off
+  steps:
+  - intent: turn_on_off
+    entities:
+    - operation_onoff: "开"
+    - device: "电视"
+  - action: action_turn_on_off
+
+- story: deny
+  steps:
+  - intent: deny
+  - action: action_response_deny
+
+- story: modify attribute
+  steps:
+    - or:
+      - intent: modify_attr
+        entities:
+            - operation_attr: "音量升高"
+      - intent: modify_attr
+        entities:
+            - operation_attr: "音量升高"
+            - device: "电视"
+      - intent: modify_attr
+        entities:
+            - operation_attr: "调整"
+            - value: "2"
+      - intent: modify_attr
+        entities:
+            - operation_attr: "温度降低"
+            - device: "空调"
+            - value: "2"
+      - intent: modify_attr
+        entities:
+            - operation_attr: "调整"
+            - device: "空调"
+            - mode: "制冷"
+      - intent: modify_attr
+        entities:
+            - operation_attr: "开"
+            - mode: "制冷"
+
+    - action: action_modify_attr
+
+- story: random play
+  steps:
+    - intent: random_play
+    - action: action_random_play
+
+- story: play multimedia simple way
+  steps:
+    - or:
+        - intent: operate_multimedia
+          entities:
+            - operation_mm: "播放"
+        - intent: operate_multimedia
+          entities:
+            - operation_mm: "播放"
+            - mm_name: "逆战"
+        - intent: operate_multimedia
+          entities:
+            - operation_mm: "播放"
+            - mm_name: "平凡的世界"
+            - value: "3"
+        - intent: operate_multimedia
+          entities:
+            - operation_mm: "播放"
+            - singer: "周杰伦"
+            - mm_name: "最伟大的作品"
+        - intent: operate_multimedia
+          entities:
+            - mm_name: "你好李焕英"
+    - action: action_operate_mm
+
+- story: get time for ac
+  steps:
+  - intent: ac_set_time
+  - action: ac_set_time_form
+  - active_loop: ac_set_time_form
+
+- story: user interrupts setting time for ac
+  steps:
+  - intent: ac_set_time
+  - action: ac_set_time_form
+  - active_loop: ac_set_time_form
+  - intent: deny
+  - action: action_response_deny
+  - action: action_deactivate_loop
+  - active_loop: null
+
+

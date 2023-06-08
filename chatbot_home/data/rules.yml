@@ -1,0 +1,41 @@
+version: "3.1"
+
+rules:
+  - rule: handle fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback
+  - rule: wake up
+    conversation_start: true
+    steps:
+      - intent: wake_up
+      - action: action_welcome
+  - rule: greet
+    steps:
+      - intent: greet
+      - action: action_greet
+  - rule: self introduction
+    steps:
+      - intent: self_introduction
+      - action: action_self_introduction
+
+  - rule: bye
+    steps:
+      - intent: goodbye
+      - action: action_goodbye
+
+  - rule: set time for ac
+    condition:
+      # Condition that form is active.
+      - active_loop: ac_set_time_form
+    steps:
+      # Form is deactivated
+      - action: ac_set_time_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_ac_set_time
+
+
+

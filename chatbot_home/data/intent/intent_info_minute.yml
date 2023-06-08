@@ -1,0 +1,42 @@
+version: "3.1"
+
+nlu:
+- intent: info_minute
+  examples: |
+    - 就[9]{"entity":"value","role":"hour"}小时把
+    - 就[3]{"entity":"value","role":"hour"}时
+    - 小软同学，那就[3]{"entity":"value","role":"minute"}分钟
+    - [六]{"entity":"value","role":"hour"}时[47]{"entity":"value","role":"minute"}分钟吧
+    - [九]{"entity":"value","role":"hour"}时[四]{"entity":"value","role":"minute"}分钟
+    - 设定[3]{"entity":"value","role":"hour"}小时吧
+    - [25]{"entity":"value","role":"minute"}分
+    - 就[4]{"entity":"value","role":"hour"}时
+    - 设定[35]{"entity":"value","role":"minute"}分钟
+    - 设定[8]{"entity":"value","role":"hour"}时吧
+    - [1个半]{"entity":"value","role":"hour"}时吧
+    - 就[27]{"entity":"value","role":"minute"}分把
+    - 小阮同学，[9]{"entity":"value","role":"hour"}时
+    - [7]{"entity":"value","role":"minute"}分钟
+    - 小阮小阮，就[7]{"entity":"value","role":"hour"}时[五]{"entity":"value","role":"minute"}分
+    - [6]{"entity":"value","role":"hour"}小时
+    - 小阮小阮，[半]{"entity":"value","role":"hour"}时把
+    - 小冉小冉，设定[2]{"entity":"value","role":"hour"}小时
+    - [29]{"entity":"value","role":"minute"}分
+    - 就[40]{"entity":"value","role":"minute"}分钟
+    - 那就[九]{"entity":"value","role":"hour"}时[37]{"entity":"value","role":"minute"}分钟
+    - 小阮同学，就[十]{"entity":"value","role":"hour"}时[38]{"entity":"value","role":"minute"}分吧
+    - [2]{"entity":"value","role":"hour"}时
+    - [一个半]{"entity":"value","role":"hour"}时把
+    - 那就[44]{"entity":"value","role":"minute"}分钟吧
+    - 小软小软，设定[5]{"entity":"value","role":"hour"}小时
+    - 小软同学，[53]{"entity":"value","role":"minute"}分把
+    - [39]{"entity":"value","role":"minute"}分钟吧
+    - [四]{"entity":"value","role":"hour"}小时[36]{"entity":"value","role":"minute"}分钟把
+    - 小阮小阮，就[四]{"entity":"value","role":"hour"}时[二]{"entity":"value","role":"minute"}分钟把
+    - [六]{"entity":"value","role":"hour"}小时[42]{"entity":"value","role":"minute"}分钟吧
+    - 设定[八]{"entity":"value","role":"hour"}小时[五十四]{"entity":"value","role":"minute"}分吧
+    - [7]{"entity":"value","role":"hour"}小时
+    - [6]{"entity":"value","role":"hour"}时[十八]{"entity":"value","role":"minute"}分
+    - 设定[10]{"entity":"value","role":"hour"}时
+    - [半]{"entity":"value","role":"hour"}小时吧
+    - 小冉同学，那就[33]{"entity":"value","role":"minute"}分钟

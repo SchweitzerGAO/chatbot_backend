@@ -1,0 +1,26 @@
+version: "3.1"
+
+nlu:
+- intent: turn_on_off
+  examples: |
+    - [开](operation_onoff)[电视](device)
+    - [打开](operation_onoff)[电视机](device)
+    - [开启](operation_onoff)[空调](device)
+    - [关闭](operation_onoff)[空调机](device)
+    - [关上](operation_onoff)[电视](device)
+    - [电视机](device)[开](operation_onoff)一下
+    - 把[空调](device)[关了](operation_onoff)
+    - 把[电视](device)[关掉](operation_onoff)
+    - [开](operation_onoff)[灯](device)
+    - [打开](operation_onoff)[灯](device)
+    - 把[电灯](device)[打开](operation_onoff)
+    - [灯光](device)关掉
+    - [开](operation_onoff)[电视](device)
+    - 小冉同学，[打开](operation_onoff)[电视机](device)
+    - 小阮小阮，[关上](operation_onoff)[电视](device)
+    - 小冉小冉，[电视机](device)[开](operation_onoff)一下
+    - 小软同学，把[空调](device)[关了](operation_onoff)
+    - 小软小软，把[电视](device)[关掉](operation_onoff)
+    - 小冉小冉，[开](operation_onoff)[灯](device)
+    - 小软小软，[打开](operation_onoff)[灯](device)
+    - 小软同学，把[电灯](device)[打开](operation_onoff)

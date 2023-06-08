@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+- story: alter temp
+  steps:
+    - or:
+        - intent: alter_temp
+          entities:
+            - operation_alter_temp: "温度升高"
+        - intent: alter_temp
+          entities:
+            - operation_alter_temp: "温度升高"
+            - value: "2"
+    - action: action_alter_temp
+
+- story: random play
+  steps:
+    - intent: random_play
+    - action: action_random_play
+
+- story: play song
+  steps:
+    - or:
+        - intent: play_song
+          entities:
+            - song: "遇见一生"
+        - intent: play_song
+          entities:
+            - song: "你想干什么"
+            - singer: "刘梦妤"
+        - intent: play_song
+          entities:
+            - singer: "李荣浩"
+            - song: "李白"
+            - value: "2"
+        - intent: play_song
+          entities:
+            - song: "橙月"
+            - value: "3"
+
+    - action: action_play_song
+
+- story: pause
+  steps:
+    - intent: pause
+    - action: action_pause
+
+- story: replay
+  steps:
+    - intent: replay
+    - action: action_replay
+
+- story: quit
+  steps:
+    - intent: quit
+    - action: action_quit
+
+- story: alter volume
+  steps:
+    - intent: alter_volume
+    - action: action_alter_volume
+
+- story: call name
+  steps:
+    - intent: call_name
+    - action: action_call_name
+
+- story: navigate
+  steps:
+    - or:
+        - intent: navigate
+          entities:
+            - location: "同济大学"
+        - intent: navigate
+          entities:
+            - location: "黄陵县"
+            - location: "同济大学"
+    - action: action_navigate
+
+- story: operate seat position
+  steps:
+    - or:
+        - intent: operate_seat_position
+          entities:
+            - seat_operation: "高"
+            - operation_onoff: "驾驶"
+        - intent: operate_seat_position
+          entities:
+            - seat_operation: "椅背向前"
+    - action: action_operate_seat_position

@@ -1,0 +1,10 @@
+version: "3.1"
+
+nlu:
+- lookup: mode
+  examples: |
+    - 送风
+    - 制热
+    - 制冷
+    - 自动
+    - 除湿

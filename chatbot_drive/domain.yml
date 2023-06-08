@@ -1,0 +1,204 @@
+version: "3.1"
+
+intents:
+  - greet
+  - wake_up
+  - goodbye
+  - self_introduction
+  - ac_on_off
+  - alter_temp
+  - set_temp
+  - alter_strength
+  - random_play
+  - play_song
+  - pause
+  - replay
+  - quit
+  - alter_volume
+  - call_number
+  - call_name
+  - navigate
+  - operate_roof
+  - operate_window
+  - operate_seat_feature
+  - operate_seat_position
+  - operate_mirror
+
+entities:
+  - operation_onoff
+  - operation_set_temp
+  - operation_alter_temp
+  - operation_alter_strength
+  - operation_alter_volume
+  - value
+  - singer
+  - song
+  - phone_number
+  - name
+  - location
+  - window_position
+  - seat_name
+  - seat_operation
+  - mirror_name
+  - mirror_operation
+
+slots:
+  operation_onoff:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_onoff
+  operation_set_temp:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_set_temp
+  operation_alter_temp:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_alter_temp
+  operation_alter_strength:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_alter_strength
+  operation_alter_volume:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: operation_alter_volume
+  temperature:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: value
+        role: temperature
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: value
+        role: time
+  singer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: singer
+  song:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: song
+  phone_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone_number
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  departure:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+        role: departure
+  destination:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+        role: destination
+  window_position:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: window_position
+  seat_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: seat_name
+  seat_operation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: seat_operation
+  mirror_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mirror_name
+  mirror_operation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mirror_operation
+
+responses:
+  utter_greet:
+  - text: "你好，请问需要什么帮助？"
+  - text: "您好，请问需要什么帮助？"
+  - text: "我在"
+
+  utter_goodbye:
+  - text: "再见！"
+  - text: "祝您今天好心情，再见！"
+  - text: "拜拜！"
+  - text: "Bye!"
+
+  utter_self_introduction:
+  - text: "我是小软，您的智能助手"
+  - text: "我是小软，记住我的名字哦！"
+  - text: "我是小软"
+  - text: "你好！我是小软，您现在体验的是车载语音助手模式"
+
+  utter_ask_hour:
+  - text: "多长时间呢？"
+  - text: "空调需要定时多久呢？"
+  - text: "需要多久呢？"
+
+  utter_ask_minute:
+  - text: "多长时间呢？"
+  - text: "空调需要定时多久呢？"
+  - text: "需要多久呢？"
+
+  utter_response_deny:
+  - text: "好的，如果有需要的话，随时叫我哦"
+  - text: "好的，明白了，如果您有需要，小软随叫随到"
+
+  utter_default:
+  - text: "小软没听懂，您能换个说法吗"
+  - text: "抱歉，我没听懂，请您再换个说法吧"
+
+actions:
+  - action_greet
+  - action_goodbye
+  - action_self_introduction
+  - action_default_fallback
+  - action_welcome
+  - action_ac_on_off
+  - action_alter_temp
+  - action_set_temp
+  - action_alter_strength
+  - action_random_play
+  - action_play_song
+  - action_pause
+  - action_replay
+  - action_quit
+  - action_alter_volume
+  - action_call_number
+  - action_call_name
+  - action_navigate
+  - action_operate_roof
+  - action_operate_window
+  - action_operate_seat_feature
+  - action_operate_seat_position
+  - action_operate_mirror
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
